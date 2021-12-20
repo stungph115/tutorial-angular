@@ -1,0 +1,66 @@
+<h1 mat-dialog-title>Modifier un user</h1>
+<div mat-dialog-content>
+  
+
+  <form [formGroup]="myFormGroup" > 
+    
+    <mat-form-field >
+        <input matInput type="text" formControlName="name" name="name" id="name"  placeholder="Nom">
+        <mat-error *ngIf="myFormGroup.get('name').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+    </mat-form-field> 
+
+    <mat-form-field >
+        <input matInput type="text" formControlName="firstname" name="firstname" id="firstname"  placeholder="Prénom">
+        <mat-error *ngIf="myFormGroup.get('firstname').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+    </mat-form-field><br/>
+
+   
+
+    <mat-form-field >
+        <input matInput type="text" formControlName="nationality" name="nationality" id="nationality"  placeholder="Nationalité">
+        <mat-error *ngIf="myFormGroup.get('nationality').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+    </mat-form-field><br/>
+
+    <mat-form-field> 
+        <mat-label>Date de naissance</mat-label>
+        <input matInput [matDatepicker]="datepicker" formControlName="dob" name="dob" id="dob">
+        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+        <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Annuler</button>
+            <button mat-raised-button color="primary" matDatepickerApply>Valider</button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+        <mat-error *ngIf="myFormGroup.get('dob').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+    </mat-form-field><br/>
+    
+    <mat-form-field>
+
+      <mat-select placeholder="Sexe " formControlName="sex" name="sex" id="sex">
+        <mat-option value ="f">
+          f
+        </mat-option>
+        <mat-option value = 'h'>
+          h
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="myFormGroup.get('sex').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field><br/>
+
+    <mat-form-field >
+      <input matInput type="text" formControlName="email" name="email" id="email"  placeholder="Email">
+      <mat-error *ngIf="myFormGroup.get('email').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+    </mat-form-field>
+
+    <mat-form-field >
+      <input matInput type="text" formControlName="tel" name="tel" id="tel"  placeholder="Numéro téléphone">
+    </mat-form-field>
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Fermer</button>
+  <button mat-button (click)="updateUser()" cdkFocusInitial>Mettre à jour</button>
+</div>

@@ -1,0 +1,85 @@
+
+<h1>Liste des utlisateurs</h1>
+
+
+<table mat-table
+       [dataSource]="list" multiTemplateDataRows
+       class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nom </th>
+        <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="firstname">
+        <th mat-header-cell *matHeaderCellDef> Prénom </th>
+        <td mat-cell *matCellDef="let user"> {{user.firstname}} </td>
+      </ng-container>
+      <ng-container matColumnDef="nationality">
+        <th mat-header-cell *matHeaderCellDef> Nationalité </th>
+        <td mat-cell *matCellDef="let user"> {{user.nationality}} </td>
+      </ng-container>
+      <ng-container matColumnDef="dob">
+        <th mat-header-cell *matHeaderCellDef> Date de naissance </th>
+        <td mat-cell *matCellDef="let user"> {{user.dob| date:'d MMM y' }} </td>
+      </ng-container>
+      <ng-container matColumnDef="sex">
+        <th mat-header-cell *matHeaderCellDef> Sexe </th>
+        <td mat-cell *matCellDef="let user"> {{user.sex}} </td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> E-mail </th>
+        <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+      </ng-container>
+      <ng-container matColumnDef="tel">
+        <th mat-header-cell *matHeaderCellDef> Numéro téléphone </th>
+        <td mat-cell *matCellDef="let user"> {{user.tel | phoneFormat }} </td>
+      </ng-container>
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+    <td mat-cell *matCellDef="let user" [attr.colspan]="columnsToDisplay.length">
+      <div class="user-detail"
+           [@detailExpand]="user == expandedUser ? 'expanded' : 'collapsed'">
+       <div class ="Remarque">Cliquez sur les icônes pour manipuler cet utilisateur</div>
+        <div class="user-expanded">
+            <button mat-button (click)="deleteUser(user.id)"
+              matTooltip="Supprimer cet utilisateur"
+              [matTooltipDisabled]="disabled.value" >
+            <img src="/assets/delete.png" width="20" height="20" /></button>
+          
+           <button mat-button (click)="selectUser(user)"
+              matTooltip="Modifier cet utilisateur"
+              [matTooltipDisabled]="disabled.value">
+            <img src="/assets/edit.png" width="20" height="20" /></button>
+            <mat-checkbox [formControl]="disabled" class="disabled-checkbox">
+              Info-bulle désactivée
+            </mat-checkbox>
+          
+        </div>
+
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let user; columns: columnsToDisplay;"
+      class="user-row"
+      [class.example-expanded-row]="expandedUser === user"
+      (click)="expandedUser = expandedUser === user ? null : user">
+  </tr>
+  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
+</table>
+
+<br>
+<div>
+  <button mat-raised-button 
+          (click)="OpenInsertUser()"
+          matTooltip="Ajouter un nouvel utilisateur"
+          [matTooltipDisabled]="disabled.value"> 
+      <img src="/assets/add.png" width="40" height="40">
+  </button>
+</div>
+

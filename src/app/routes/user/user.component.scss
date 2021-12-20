@@ -1,0 +1,117 @@
+.mat-table {
+  width: 110%;
+}
+
+.mat-column-id {
+  width: 32px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+  
+}
+
+.mat-column-name {
+  padding-left: 16px;
+  font-size: 18px;
+  width: 500px;
+}
+
+.mat-column-firstname {
+  padding-left: 16px;
+  font-size: 18px;
+  width: 300px;
+}
+
+.mat-column-nationality {
+  padding-left: 16px;
+  font-size: 18px;
+  width: 150px;
+  text-align: center;
+}
+
+.mat-column-dob {
+  font-style: italic;
+  font-size: 18px;
+  width: 200px;
+  text-align: center;
+}
+.mat-column-tel {
+  font-style: italic;
+  font-size: 18px;
+  width: 200px;
+  text-align: center;
+}
+.mat-column-sex {
+  width: 100px;
+  text-align: center;
+  
+  font-size: 20px;
+}
+.mat-column-email {
+  width: 400px;
+  text-align: center;
+  
+  font-size: 20px;
+}
+  
+.mat-column-delete {
+  width: 150px;
+  text-align: center;
+ 
+  font-size: 20px;
+}  
+.mat-column-edit {
+  width: 150px;
+  text-align: center;
+
+  font-size: 20px;
+}
+tr.user-row:not(.expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.user-row:not(.expanded-row):active {
+  background: #efefef;
+}
+
+.user-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+tr.user-row:not(.expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.user-row:not(.expanded-row):active {
+  background: #efefef;
+}
+
+
+.user-row td {
+border-bottom-width: 0;
+}
+
+tr.detail-row {
+height: 0;
+}
+.user-expanded{
+padding: 30px;
+}
+.Remarque{
+padding: 40px;
+text-align: center;
+
+  font-size: 20px;
+  padding-left: 100px;
+}
+
+.disabled-checkbox {
+margin-left: 10px;
+}
+::ng-deep .mat-tooltip {
+font-size: 18px;
+}
+button:hover {
+transform: scale(1.5);
+}

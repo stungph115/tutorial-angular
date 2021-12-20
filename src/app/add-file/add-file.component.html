@@ -1,0 +1,63 @@
+<h1>Ajouter un fichier</h1>
+<div>
+    <form [formGroup]="fileFormGroup" (ngSubmit)="sendFile()">
+        <mat-form-field>
+            <input
+                matInput
+                type="text"
+                formControlName="file"
+                name="file"
+                id="file"
+                placeholder="Nom du fichier"
+            />
+            <mat-error *ngIf="fileFormGroup.get('file').hasError('required')">
+                Ce champ ne peut etre vide
+              </mat-error>
+        </mat-form-field><br/>
+
+        <mat-form-field>
+            <input
+                matInput
+                type="text"
+                formControlName="ca"
+                name="ca"
+                id="ca"
+                placeholder="Code client"
+            />
+            <mat-error *ngIf="fileFormGroup.get('ca').hasError('required')">
+                Ce champ ne peut etre vide
+            </mat-error>
+        </mat-form-field><br/>
+
+        <mat-form-field>
+            <input
+                matInput
+                type="text"
+                formControlName="title"
+                name="title"
+                id="title"
+                placeholder="Title"
+            />
+            <mat-error *ngIf="fileFormGroup.get('title').hasError('required')">
+                Ce champ ne peut etre vide
+            </mat-error>
+        </mat-form-field><br/>
+        <div class="content-container">
+            <dropzone class="dropzone-container"
+            #drpzone
+            [config]="config"
+            [message]="'Click or drag file here to upload'"
+            (success)="sendFile()"
+            (sending)="onSending($event)">
+            
+            </dropzone>
+        </div>
+
+        <div>
+            <button mat-button (click)="onNoClick()">Fermer</button>
+            <button mat-raised-button color="primary" type ="submit" value="Ajouter"  cdkFocusInitial>
+              Ajouter
+            </button> 
+        </div>
+    </form>
+</div>

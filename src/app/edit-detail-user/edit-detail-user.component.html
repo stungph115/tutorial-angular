@@ -1,0 +1,40 @@
+<p>edit-detail-user works!</p>
+
+
+<h1 mat-dialog-title>Modifier les détails d'un utilisateur</h1>
+<div mat-dialog-content>
+  <p>Veuillez remplir les informations correctes puis appuyez sur "Mettre à jour" ou "Fermer" pour annuler l'opération.</p>
+
+  <form [formGroup]="myFormGroup" > 
+
+    <mat-form-field >
+        <input matInput type="text" formControlName="name" name="name" id="name"  placeholder="Nom">
+        <mat-error *ngIf="myFormGroup.get('name').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+    </mat-form-field>
+
+    <mat-form-field >
+        <input matInput type="text" formControlName="firstname" name="firstname" id="firstname"  placeholder="Prénom">
+        <mat-error *ngIf="myFormGroup.get('firstname').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+    </mat-form-field>
+
+    <mat-form-field >
+        <input matInput type="text" formControlName="nationality" name="nationality" id="nationality"  placeholder="Nationalité">
+        <mat-error *ngIf="myFormGroup.get('nationality').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+    </mat-form-field>
+
+    <mat-form-field> 
+        <input matInput type="text" formControlName="age" name="age" id="age"  placeholder="Age">
+        <mat-error *ngIf="myFormGroup.get('age').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+    </mat-form-field>
+
+    <mat-form-field >
+        <input matInput type="text" formControlName="sex" name="sex" id="sex"  placeholder="Sexe">
+        <mat-error *ngIf="myFormGroup.get('sex').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Fermer</button>
+  <button mat-button (click)="updateDetailUser()" cdkFocusInitial>Mettre à jour</button>
+</div>
+

@@ -1,0 +1,86 @@
+
+<h1 mat-dialog-title>Modifier un contact</h1>
+<div mat-dialog-content>
+  <p>
+    Veuillez remplir les informations correctes puis appuyez sur "Mettre à jour"
+    ou "Fermer" pour annuler l'opération.
+  </p>
+
+  <form [formGroup]="myFormGroup">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="tel"
+        name="tel"
+        id="tel"
+        placeholder="Numéro de téléphone"
+      />
+      <mat-error *ngIf="myFormGroup.get('tel').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="email"
+        name="email"
+        id="email"
+        placeholder="Adresse mail"
+      />
+      <mat-error *ngIf="myFormGroup.get('email').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="adress"
+        name="adress"
+        id="adress"
+        placeholder="Adresse postale"
+      />
+      <mat-error *ngIf="myFormGroup.get('adress').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="zipcode"
+        name="zipcode"
+        id="zipcode"
+        placeholder="Code postal"
+      />
+      <mat-error *ngIf="myFormGroup.get('zipcode').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="city"
+        name="city"
+        id="city"
+        placeholder="Ville"
+      />
+      <mat-error *ngIf="myFormGroup.get('city').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Fermer</button>
+  <button mat-button (click)="updateContact()" cdkFocusInitial>
+    Mettre à jour
+  </button>
+</div>

@@ -1,0 +1,42 @@
+<h2>Identifiez-vous</h2>
+
+<form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()">
+    <div>
+   <mat-form-field appearance="outline">
+        <mat-label>Nom d'utilisateur</mat-label>
+        <input matInput
+          type="text"
+          formControlName="username"
+          name="username"
+          id="username"
+          placeholder="Nom d'utilisateur"
+        />
+        <mat-error *ngIf="myFormGroup.get('username').hasError('required')">
+            Ce champ ne peut etre vide</mat-error>
+        
+    </mat-form-field>
+    </div>
+    
+    <div>
+    <mat-form-field appearance="outline">
+        <mat-label>Mots de passe</mat-label>
+        <input  matInput
+          type="password"
+          formControlName="password"
+          name="password"
+          id="password"
+          placeholder="Mots de passe"/>
+          <mat-error *ngIf="myFormGroup.get('password').hasError('required')">
+            Ce champ ne peut etre vide</mat-error>
+    </mat-form-field>
+    </div>
+
+    <div >
+        <button  mat-raised-button color="primary" type = "submit"  cdkFocusInitial>
+
+          Se connecter
+        </button>
+
+        <button  mat-button  [routerLink]="['/register']" >S'inscrire</button>
+    </div>
+</form>

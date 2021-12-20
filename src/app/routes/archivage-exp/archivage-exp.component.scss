@@ -1,0 +1,52 @@
+.mat-column-num {
+  width: 32px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-file {
+  width: auto;
+  padding-left: 20px;
+  text-align: left;
+}
+.mat-column-ca {
+  width: auto;
+  padding-left: 24px;
+  text-align: center;
+}
+.mat-column-username {
+  width: auto;
+  padding-left: 24px;
+  text-align: center;
+}
+.mat-column-date {
+  width: auto;
+  padding-left: 24px;
+  text-align: center;
+}
+.mat-column-title {
+  width: auto;
+  padding-left: 24px;
+  text-align: center;
+}
+.mat-column-delete {
+  width: 32px;
+  padding-left: 24px;
+  text-align: center;
+}
+.mat-column-viewFile {
+  width: 32px;
+  padding-left: 24px;
+  text-align: center;
+}
+
+.mat-column-downloadFile {
+  width: 32px;
+  padding-left: 24px;
+  text-align: center;
+}
+button:hover {
+  transform: scale(1.5);
+  }
+  

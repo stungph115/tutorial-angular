@@ -1,0 +1,125 @@
+<h1>Créer un compte</h1>
+<div>
+  <form [formGroup]="myFormGroup" (ngSubmit)="insertUser()">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="username"
+        name="username"
+        id="username"
+        placeholder="Identifiant"
+      />
+      <mat-error *ngIf="myFormGroup.get('username').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        name="password"
+        id="password"
+        placeholder="Mots de passe"
+      />
+      <mat-error *ngIf="myFormGroup.get('password').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="name"
+        name="name"
+        id="name"
+        placeholder="Votre nom"
+      />
+      <mat-error *ngIf="myFormGroup.get('name').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="firstname"
+        name="firstname"
+        id="firstname"
+        placeholder="votre prénom"
+      />
+      <mat-error *ngIf="myFormGroup.get('name').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="nationality"
+        nationality="name"
+        id="nationality"
+        placeholder="Nationalité "
+      />
+      <mat-error *ngIf="myFormGroup.get('name').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="age"
+        name="age"
+        id="age"
+        placeholder="Age"
+      />
+      <mat-error *ngIf="myFormGroup.get('name').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+
+      <mat-select placeholder="Sexe " formControlName="sex" name="sex" id="sex">
+        <mat-option value ="f">
+          f
+        </mat-option>
+        <mat-option value = 'h'>
+          h
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="myFormGroup.get('name').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="email"
+        name="email"
+        id="email"
+        placeholder="email"
+      />
+      <mat-error *ngIf="myFormGroup.get('name').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button color="primary" type ="submit" value="Ajouter"  cdkFocusInitial>
+        S'inscrire
+      </button> 
+      <button mat-button [routerLink]="['/login']" type ="submit" value="Ajouter"  cdkFocusInitial>
+        Avez-vous déjà un compte ?
+      </button> 
+    </div>
+      
+
+  </form>
+</div>
+
+  

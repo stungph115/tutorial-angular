@@ -1,0 +1,24 @@
+.crop {
+    object-fit: cover;
+    width:230px;
+    height:230px;
+  }
+  .container {
+    position: relative;
+    width: 100%;
+  }
+
+
+  .container .btn {
+    position: absolute;
+    top: 86%;
+    left: 84%;
+    border: none;
+  }
+  
+  .container .btn:hover {
+    background-color: grey;
+  }
+  /* .content-container{
+    display: none;
+  } */

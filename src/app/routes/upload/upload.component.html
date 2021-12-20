@@ -1,0 +1,48 @@
+<div >
+   <h2> Dropzone</h2>
+</div>
+
+<div class="content-container">
+    <dropzone class="dropzone-container" [config]="config"
+    [message]="'Click or drag images here to upload'"
+    type = "directive">
+    </dropzone>
+    
+</div>
+<!-- <div >
+    <button  mat-raised-button color="primary" type = "" cdkFocusInitial>
+      Envoyer
+    </button>
+    <button  mat-button (click)="resetUpload()" >Annuler</button>
+</div> -->
+
+<h2>Liste des fichiers</h2>
+<table mat-table [dataSource]="list" style="width: 100%">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Nom </th>
+    <td mat-cell *matCellDef="let file" >{{ file.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef>Type</th>
+    <td mat-cell *matCellDef="let file">{{ file.type }}</td>
+  </ng-container>
+  <ng-container matColumnDef="viewFile">
+    <th mat-header-cell *matHeaderCellDef>Ouvrir</th>
+    <td style="text-align: center; vertical-align: middle"
+        mat-cell *matCellDef="let file" 
+        (click)="openFile(file.name)">
+      <img src="/assets/see.png" width="20" height="20" />
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="downloadFile">
+    <th mat-header-cell *matHeaderCellDef>Télécharger</th>
+    <td style="text-align: center; vertical-align: middle"
+        mat-cell *matCellDef="let file" 
+        (click)="downloadFile(file.name)">
+      <img src="/assets/download.png" width="20" height="20" />
+    </td>
+  </ng-container> 
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
