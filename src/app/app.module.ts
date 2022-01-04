@@ -38,6 +38,7 @@ import { SharedPipeModule } from './shared/pipes/shared-pipe.module';
 import { AddFileComponent } from './add-file/add-file.component';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { AlertDeleteFileComponent } from './alert-delete-file/alert-delete-file.component';
+import { Page404Component } from './page404/page404.component';
 export const DateFormat = {
   parse: {
    dateInput: 'input',
@@ -59,6 +60,7 @@ export const DateFormat = {
     AddContactComponent,
     AddFileComponent,
     AlertDeleteFileComponent,
+    Page404Component,
     
   ],
   imports: [

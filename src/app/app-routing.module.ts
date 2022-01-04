@@ -9,6 +9,7 @@ import { RegisterRoutingModule } from './routes/register/register.module';
 import { UploadRoutingModule } from './routes/upload/upload.module';
 import { ArchivageExpRoutingModule } from './routes/archivage-exp/archivage-exp.module';
 import { AuthGuard } from './_helpers/auth.guard'; 
+import { Page404Component } from './page404/page404.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,9 @@ const routes: Routes = [
     loadChildren: './routes/archivage-exp/archivage-exp.module#ArchivageExpRoutingModule',
     canActivate: [AuthGuard]
   },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: Page404Component },
+
 ];
 
 @NgModule({

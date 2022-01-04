@@ -33,12 +33,12 @@ export class UserService {
   //public
   public get(): User{
     if(this.user){
-      console.log("here", this.user)
+     // console.log("here", this.user)
       return this.user
 
     }else{
       let user = localStorage.getItem('currentUser')
-      console.log("get()",user)
+      //console.log("get()",user)
       if(user){
         this.setUser(JSON.parse(user))
         return JSON.parse(user)
@@ -47,9 +47,45 @@ export class UserService {
   }
   public getList(): Promise<any> {
     return new Promise((resolve, reject) => {
-      console.log("get users")
+    //  console.log("get users")
       this.httpClient
         .get('Http://localhost:3000/user')
+        .toPromise()
+        .then((list) => {
+          this.set(list);
+       //   console.log("list user", this.list)
+        });
+    });
+  }
+  public getUser(id: number| string) : Promise<any>{
+    return new Promise((resolve, reject)=>{
+      console.log(id)
+      this.httpClient.get('http://localhost:3000/user/' + id)
+      .toPromise()
+      .then((user)=>{
+        this.setThisUser(user);
+        console.log("this user",user)
+      })
+    })
+  }
+  public getListUser(): Promise<any> {
+    return new Promise((resolve, reject) => {
+   //   console.log("get users")
+      this.httpClient
+        .get('Http://localhost:3000/user/user')
+        .toPromise()
+        .then((list) => {
+          this.set(list);
+          console.log("list user", this.list)
+        });
+    });
+  }
+
+  public getListAdmin(): Promise<any> {
+    return new Promise((resolve, reject) => {
+    //  console.log("get users")
+      this.httpClient
+        .get('Http://localhost:3000/user/admin')
         .toPromise()
         .then((list) => {
           this.set(list);
@@ -59,7 +95,7 @@ export class UserService {
   }
 
   public getInfo(username: string): Promise<any> {
-    console.log("service info",username)
+  //  console.log("service info",username)  
     return new Promise((resolve, reject) => {
       this.httpClient
         .get('Http://localhost:3000/user/info/' + username)
@@ -71,7 +107,7 @@ export class UserService {
     });
   }
   public async deleteUser(userId: number): Promise<any> {
-    console.log('UserService.deleteUser');
+   // console.log('UserService.deleteUser');
     return new Promise((resolve, reject) => {
       console.log(typeof userId);
       this.httpClient
@@ -93,7 +129,7 @@ export class UserService {
   }
 
   public async insertUser(user: User): Promise<any> {
-    console.log('UserService.insertUSer');
+   // console.log('UserService.insertUSer');
     return new Promise((resolve, reject) => {
       this.httpClient
         .post<any>('Http://localhost:3000/user/insert', user)
@@ -110,6 +146,9 @@ export class UserService {
     this.currentListSubject.next(list);
 
    }
+   public setThisUser(user: any): void {
+    this.currentuserSubject.next(user);
+  }
 
   public setUser(user: any): void {
     this.currentuserSubject.next(user);
@@ -117,7 +156,7 @@ export class UserService {
   }
 
   public async updateUser(params: User): Promise<any> {
-    console.log('UserService.updateUser');
+   // console.log('UserService.updateUser');
     return new Promise((resolve, reject) => {
       this.httpClient
         .post<any>('Http://localhost:3000/user/update', params)

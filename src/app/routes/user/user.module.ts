@@ -21,16 +21,35 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { DateFormat } from 'src/app/app.module';
 import { SharedPipeModule } from 'src/app/shared/pipes/shared-pipe.module';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { AdminListComponent } from './admin-list/admin-list.component';
+import {MatDividerModule} from '@angular/material/divider';
+
 export const userRoute: Routes = [
   {
     path: '',
     component: UserComponent,
+    children: [
+      {
+          path:'users', component: UserListComponent
+      },
+      {
+          path: 'user/:id', component: UserDetailComponent
+      },
+      {
+          path: 'admins', component: AdminListComponent
+      }
+  ]
   },
 ];
 
 @NgModule({
   declarations: [
     UserComponent,
+    UserListComponent,
+    UserDetailComponent,
+    AdminListComponent,
   ],
   entryComponents: [UserComponent],
 
@@ -51,6 +70,7 @@ export const userRoute: Routes = [
     MatCheckboxModule,
     MatDatepickerModule,
     SharedPipeModule,
+    MatDividerModule,
     RouterModule.forChild(userRoute),
   ],
   providers: [    

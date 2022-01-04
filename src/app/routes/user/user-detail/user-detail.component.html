@@ -1,0 +1,38 @@
+
+<div class="grid-container">
+    <div class="item1">{{user.name}} {{user.firstname}} - Id : {{user.id}}</div>
+    
+    <div class="item2"><img src="http://localhost:3000/user/getPhoto/{{user.photoProfile}}" class="crop" >
+    </div>
+    <div class="item3">
+        <div class="title">Information complémentaire</div>
+        <div class="container">
+            <li>Nationalité: {{user.nationality}}</li>
+            <li>Date de naissance: {{user.dob| date:'d MMMM y'}}</li>
+            <li>Sexe: {{user.sex}}</li>
+            <li>Role: {{user.role}}</li>
+            <li>Username: {{user.username}}</li>
+        </div>
+    </div> 
+    
+    <div class="item4">
+        <div class="title">Contact</div>
+        <div class="container">
+            <li>Numéro téléphone: {{user.tel| phoneFormat}}</li>
+            <li>Email: {{user.email}}</li>
+        </div>
+        
+    </div>  
+    
+    <div class ="item5">
+        <button  mat-flat-button (click)="back()"  matTooltip="Retour en arrière"> <img src="/assets/back.png" width="50" height="50" /></button>
+        <button mat-flat-button (click)="selectUser(user)"
+              matTooltip="Modifier cet utilisateur">
+            <img src="/assets/edit.png" width="40" height="40" />
+        </button>
+    </div>   
+  </div>
+
+
+
+

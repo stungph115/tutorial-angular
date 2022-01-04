@@ -1,0 +1,36 @@
+.item1 { grid-area: name; }
+.item2 { grid-area: photo; }
+
+.item3 { grid-area: info; }
+.item4 { grid-area: contact; }
+.item5 { grid-area: back; }
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'name name name name name name'
+    'photo info info info info info'
+    'photo contact contact contact contact contact'
+    'back back back back back back';
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: left;
+  padding: 20px 0;
+  font-size: 14px;  
+}
+.crop {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+  }
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.grid-container .item1{
+    font-size: 30px;
+    font-weight: bold;
+}

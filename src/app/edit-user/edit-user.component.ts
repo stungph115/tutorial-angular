@@ -38,7 +38,7 @@ export class EditUserComponent implements OnInit {
       sex: [{ value: null }, Validators.required],
       email: [{ value: null }, Validators.required],
       tel: [{ value: null }, Validators.required],
-
+      role: [{ value: null }, Validators.required],
     });
 
     this.myFormGroup.setValue({
@@ -50,7 +50,7 @@ export class EditUserComponent implements OnInit {
       sex: this.data.sex,
       email: this.data.email,
       tel: this.data.tel,
-
+      role: this.data.role,
     });
   }
   onNoClick(): void {

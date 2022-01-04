@@ -58,6 +58,21 @@
       <input matInput type="text" formControlName="tel" name="tel" id="tel"  placeholder="Numéro téléphone">
     </mat-form-field>
 
+    <mat-form-field>
+
+      <mat-select placeholder="Role " formControlName="role" name="role" id="role">
+        <mat-option value ="admin">
+          Admin
+        </mat-option>
+        <mat-option value = 'user'>
+          User
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="myFormGroup.get('role').hasError('required')">
+        Ce champ ne peut etre vide
+      </mat-error>
+    </mat-form-field><br/>
+
   </form>
 </div>
 <div mat-dialog-actions>
