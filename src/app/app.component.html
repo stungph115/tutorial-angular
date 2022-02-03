@@ -389,7 +389,15 @@
         <mat-icon class="icon_menu"><img src="/assets/archive.png" width="30" height="30"></mat-icon>
         <span>Archivage</span>
       </button>
-  
+
+      <button mat-menu-item [routerLink]="['/charts']" class="menu">
+        <mat-icon class="icon_menu"><img src="/assets/chart.png" width="30" height="30"></mat-icon>
+        <span>Graphes</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/logs']" class="menu">
+        <mat-icon class="icon_menu"><img src="/assets/chart.png" width="30" height="30"></mat-icon>
+        <span>Graphes logs</span>
+      </button>
     </mat-menu>
   </div>
 

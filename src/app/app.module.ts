@@ -38,6 +38,17 @@ import { SharedPipeModule } from './shared/pipes/shared-pipe.module';
 import { AddFileComponent } from './add-file/add-file.component';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { AlertDeleteFileComponent } from './alert-delete-file/alert-delete-file.component';
+import { Page404Component } from './page404/page404.component';
+import { ChartsModule } from 'ng4-charts/ng4-charts';
+import { ChartValueComponent } from './chart-value/chart-value.component';
+import 'hammerjs';
+import 'chartjs-plugin-zoom';
+import { Chart } from 'chart.js';
+import zoomPlugin from 'chartjs-plugin-zoom';
+import { LogsComponent } from './routes/logs/logs.component';
+
+Chart.register(zoomPlugin);
+
 export const DateFormat = {
   parse: {
    dateInput: 'input',
@@ -59,6 +70,9 @@ export const DateFormat = {
     AddContactComponent,
     AddFileComponent,
     AlertDeleteFileComponent,
+    Page404Component,
+    ChartValueComponent,
+    
     
   ],
   imports: [
@@ -87,7 +101,8 @@ export const DateFormat = {
     MatDatepickerModule,
     MatNativeDateModule,
     SharedPipeModule,
-    DropzoneModule
+    DropzoneModule,
+    ChartsModule,
   ],
   providers: [
     {
@@ -103,6 +118,18 @@ export const DateFormat = {
     { provide: MAT_DATE_FORMATS, useValue: DateFormat },
     { provide: MAT_DATE_LOCALE, useValue: 'fr-FR' },
 
+  ],
+  entryComponents: [ 
+    
+    EditContactComponent,
+    EditDetailUserComponent,
+    EditUserComponent,
+    AddUserComponent,
+    AddContactComponent,
+    AddFileComponent,
+    AlertDeleteFileComponent,
+    Page404Component,
+    ChartValueComponent, 
   ],
 
   bootstrap: [AppComponent]

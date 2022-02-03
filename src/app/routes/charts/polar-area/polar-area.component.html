@@ -1,0 +1,11 @@
+<p>polar-area works!</p>
+<div style="display: block">
+    <canvas baseChart width="600" height="600"
+            [data]="polarAreaChartData"
+            [labels]="polarAreaChartLabels"
+            [legend]="polarAreaLegend"
+            [chartType]="polarAreaChartType"
+            [options]="polarAreaOptions"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>

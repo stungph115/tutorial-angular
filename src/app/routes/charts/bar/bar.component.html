@@ -1,0 +1,13 @@
+<p>bar works!</p>
+<div>
+    <div style="display: block">
+      <canvas baseChart width="600" height="300"
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>

@@ -9,49 +9,69 @@ import { RegisterRoutingModule } from './routes/register/register.module';
 import { UploadRoutingModule } from './routes/upload/upload.module';
 import { ArchivageExpRoutingModule } from './routes/archivage-exp/archivage-exp.module';
 import { AuthGuard } from './_helpers/auth.guard'; 
+import { Page404Component } from './page404/page404.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: './routes/home/home.module#HomeRoutingModule',
+    loadChildren: () => import('./routes/home/home.module').then(m => m.HomeRoutingModule),
     canActivate: [AuthGuard]
   },
   
   {
     path: 'user',
-    loadChildren: './routes/user/user.module#UserRoutingModule',
+    loadChildren: () => import('./routes/user/user.module').then(m => m.UserRoutingModule),
     canActivate: [AuthGuard]
   },
 
   {
     path: 'detailuser',
-    loadChildren: './routes/detailuser/detailuser.module#DetailuserRoutingModule',
+    loadChildren: () => import('./routes/detailuser/detailuser.module').then(m => m.DetailuserRoutingModule),
     canActivate: [AuthGuard]
   },
 
   {
     path: 'contact',
-    loadChildren: './routes/contact/contact.module#ContactRoutingModule',
+    loadChildren: () => import('./routes/contact/contact.module').then(m => m.ContactRoutingModule),
     canActivate: [AuthGuard]
   },
   {
     path: 'login',
-    loadChildren: './routes/login/login.module#LoginRoutingModule',
+    loadChildren: () => import('./routes/login/login.module').then(m => m.LoginRoutingModule),
+
   },
   {
     path: 'register',
-    loadChildren: './routes/register/register.module#RegisterRoutingModule',
+    loadChildren: () => import('./routes/register/register.module').then(m => m.RegisterRoutingModule),
+
   },
   {
     path: 'upload',
-    loadChildren: './routes/upload/upload.module#UploadRoutingModule',
+    loadChildren: () => import('./routes/upload/upload.module').then(m => m.UploadRoutingModule),
     canActivate: [AuthGuard]
   },
   {
     path: 'archivage-exp',
-    loadChildren: './routes/archivage-exp/archivage-exp.module#ArchivageExpRoutingModule',
+    loadChildren: () => import('./routes/archivage-exp/archivage-exp.module').then(m => m.ArchivageExpRoutingModule),
+
     canActivate: [AuthGuard]
   },
+  {
+    path: 'charts',
+    loadChildren: () => import('./routes/charts/charts.module').then(m => m.ChartsRoutingModule),
+
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'logs',
+    loadChildren: () => import('./routes/logs/logs.module').then(m => m.LogsRoutingModule),
+
+    canActivate: [AuthGuard]
+  },
+
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: Page404Component },
+
 ];
 
 @NgModule({

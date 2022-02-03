@@ -1,0 +1,10 @@
+<p>mix works!</p>
+<canvas baseChart width="600" height="400"
+        chartType="bar"
+        [datasets]="chart.datasets"
+        [labels]="chart.labels"
+        [options]="chart.options"
+        legend="true"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+</canvas>

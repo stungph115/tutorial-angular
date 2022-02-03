@@ -1,0 +1,54 @@
+<div>
+<form [formGroup]="myFormGroup" (ngSubmit)="showGraph()" id="formGroup">
+  <mat-form-field> 
+    <mat-label>Date début</mat-label>
+    <input matInput [matDatepicker]="datepickerDeb" formControlName="dateDeb" name="dateDeb" id="dateDeb">
+    <mat-datepicker-toggle matSuffix [for]="datepickerDeb"></mat-datepicker-toggle>
+    <mat-datepicker #datepickerDeb>
+    <mat-datepicker-actions>
+        <button mat-button matDatepickerCancel>Annuler</button>
+        <button mat-raised-button color="primary" matDatepickerApply>Valider</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+    <mat-error *ngIf="myFormGroup.get('dateDeb').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+</mat-form-field>
+
+<mat-form-field> 
+  <mat-label>Date fin</mat-label>
+  <input matInput [matDatepicker]="datepickerFin" formControlName="dateFin" name="dateFin" id="dateFin">
+  <mat-datepicker-toggle matSuffix [for]="datepickerFin"></mat-datepicker-toggle>
+  <mat-datepicker #datepickerFin>
+  <mat-datepicker-actions>
+      <button mat-button matDatepickerCancel>Annuler</button>
+      <button mat-raised-button color="primary" matDatepickerApply>Valider</button>
+    </mat-datepicker-actions>
+  </mat-datepicker>
+  <mat-error *ngIf="myFormGroup.get('dateFin').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+</mat-form-field>
+
+
+  <mat-form-field>
+    <mat-select placeholder="Choisir un user" formControlName="id_user" id='idUser'>
+      <mat-option  [value]="'id_user'">Tout</mat-option>
+      <mat-option *ngFor="let listUser of listUser" [value]="listUser.id_user">{{listUser.id_user}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="myFormGroup.get('id_user').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+  </mat-form-field>
+  
+  
+    <button mat-raised-button color="primary" type ="submit" id="button">Show graph</button>
+  
+  </form>
+</div>
+<div>
+    <div style="display: block">
+      <canvas baseChart id="myChart" width="1000" height="500"
+              [datasets]="logsChartData"
+              [labels]="logsChartLabels"
+              [options]="logsChartOptions"
+              [colors]="logsChartColors"
+              [legend]="logsChartLegend"
+              [chartType]="logsChartType"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
