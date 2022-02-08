@@ -7,6 +7,7 @@ export interface Log {
 
 export interface UserId {
     id_user : number
+    nom_com: string
 }
 export interface UserDetail {
     id_user : number

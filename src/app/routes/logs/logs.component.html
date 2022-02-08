@@ -30,7 +30,7 @@
   <mat-form-field>
     <mat-select placeholder="Choisir un user" formControlName="id_user" id='idUser'>
       <mat-option  [value]="'id_user'">Tout</mat-option>
-      <mat-option *ngFor="let listUser of listUser" [value]="listUser.id_user">{{listUser.id_user}}</mat-option>
+      <mat-option *ngFor="let listUser of listUser" [value]="listUser.id_user">{{listUser.nom_com}}</mat-option>
     </mat-select>
     <mat-error *ngIf="myFormGroup.get('id_user').hasError('required')"> Ce champ ne peut etre vide </mat-error>
   </mat-form-field>
