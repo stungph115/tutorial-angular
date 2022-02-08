@@ -62,7 +62,6 @@ const routes: Routes = [
 
     canActivate: [AuthGuard]
   },
-<<<<<<< HEAD
   {
     path: 'logs',
     loadChildren: () => import('./routes/logs/logs.module').then(m => m.LogsRoutingModule),
@@ -70,8 +69,6 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
 
-=======
->>>>>>> bf124e9d983733e8f0e3c7a592f019ae81c638fa
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: Page404Component },
 

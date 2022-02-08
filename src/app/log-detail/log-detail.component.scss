@@ -1,0 +1,52 @@
+
+  
+  .mat-column-date {
+    width: 70px;
+    text-align: center;
+    
+  }
+  .mat-column-ca {
+    width: 20px;
+    text-align: center;
+    
+  }
+  .mat-column-Event {
+    width: 20px;
+    text-align: center;
+    
+  }
+  .mat-column-id_fiche {
+    width: 20px;
+    text-align: center;
+    
+  }
+  .mat-column-Query {
+    width: 20px;
+    text-align: center;
+    
+  }
+  .mat-column-route {
+    width: 70px;
+    text-align: center;
+    
+  }
+  .mat-column-method {
+    width: 20px;
+    padding-right: 24px;
+    text-align: center;
+    
+  }
+  tr.detail-row {
+    height: 0;
+  }
+  .QueryDetail {
+    overflow: hidden;
+    display: flex;
+  }
+  .logDetail-row {
+    border-bottom-width: 0;
+  }
+  
+  .logDetail-expanded{
+    padding: 30px;
+  }

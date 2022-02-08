@@ -25,10 +25,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { AdminListComponent } from './admin-list/admin-list.component';
 import {MatDividerModule} from '@angular/material/divider';
-<<<<<<< HEAD
 import { ChartsModule } from 'ng4-charts/ng4-charts';
-=======
->>>>>>> bf124e9d983733e8f0e3c7a592f019ae81c638fa
 
 export const userRoute: Routes = [
   {

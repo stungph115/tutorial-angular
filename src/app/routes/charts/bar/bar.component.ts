@@ -11,10 +11,11 @@ export class BarComponent implements OnInit {
   public barChartOptions:any = {
     hoverBorderWidth: 5,
     responsive: true,
+    indexAxis: 'x',
     
   };
   public barChartLabels:string[] = ['17~20 ans', '20~30 ans', '30~40 ans', '40~50 ans', '50~60 ans', '60~  ans'];
-  public barChartType:string = 'bar';
+  public barChartType:string='bar';
   public barChartLegend:boolean = true;
 
   public barChartData:any[] = [
@@ -57,6 +58,7 @@ export class BarComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.barChartData)
+ 
   }
 
 }

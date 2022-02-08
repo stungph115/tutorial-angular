@@ -39,7 +39,6 @@ import { AddFileComponent } from './add-file/add-file.component';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { AlertDeleteFileComponent } from './alert-delete-file/alert-delete-file.component';
 import { Page404Component } from './page404/page404.component';
-<<<<<<< HEAD
 import { ChartsModule } from 'ng4-charts/ng4-charts';
 import { ChartValueComponent } from './chart-value/chart-value.component';
 import 'hammerjs';
@@ -47,11 +46,11 @@ import 'chartjs-plugin-zoom';
 import { Chart } from 'chart.js';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import { LogsComponent } from './routes/logs/logs.component';
+import { LogDetailComponent } from './log-detail/log-detail.component';
+import { MatTableModule } from '@angular/material/table';
 
 Chart.register(zoomPlugin);
 
-=======
->>>>>>> bf124e9d983733e8f0e3c7a592f019ae81c638fa
 export const DateFormat = {
   parse: {
    dateInput: 'input',
@@ -74,11 +73,9 @@ export const DateFormat = {
     AddFileComponent,
     AlertDeleteFileComponent,
     Page404Component,
-<<<<<<< HEAD
     ChartValueComponent,
+    LogDetailComponent,
     
-=======
->>>>>>> bf124e9d983733e8f0e3c7a592f019ae81c638fa
     
   ],
   imports: [
@@ -88,6 +85,7 @@ export const DateFormat = {
     MatDialogModule,
     MatFormFieldModule,
     FormsModule,
+    MatTableModule,
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
@@ -136,6 +134,8 @@ export const DateFormat = {
     AlertDeleteFileComponent,
     Page404Component,
     ChartValueComponent, 
+    LogDetailComponent,
+
   ],
 
   bootstrap: [AppComponent]

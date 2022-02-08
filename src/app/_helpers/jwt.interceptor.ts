@@ -21,7 +21,7 @@ export class JwtInterceptor implements HttpInterceptor {
                     photoProfile: currentUser.photoProfile,
                     
                 }
-            }); console.log("userRole",currentUser.role)
+            });// console.log("userRole",currentUser.role)
         }
        // console.log("currenuser",currentUser)
         return next.handle(request);

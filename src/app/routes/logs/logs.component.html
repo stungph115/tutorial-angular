@@ -34,7 +34,17 @@
     </mat-select>
     <mat-error *ngIf="myFormGroup.get('id_user').hasError('required')"> Ce champ ne peut etre vide </mat-error>
   </mat-form-field>
-  
+  <mat-form-field>
+    <mat-select placeholder="Choisir type de graph" formControlName="type" id='type'>
+      <mat-option  [value]="'bar'">Bar</mat-option>
+      <mat-option  [value]="'line'">Line</mat-option>
+  <!--     <mat-option  [value]="'horizontalBar'">horizontal Bar</mat-option> 
+      <mat-option  [value]="'pie'">pie</mat-option>
+      <mat-option  [value]="'doughnut'">doughnut</mat-option>
+      <mat-option  [value]="'polarArea'">polar Area</mat-option>-->
+    </mat-select>
+    <mat-error *ngIf="myFormGroup.get('type').hasError('required')"> Ce champ ne peut etre vide </mat-error>
+  </mat-form-field>
   
     <button mat-raised-button color="primary" type ="submit" id="button">Show graph</button>
   
