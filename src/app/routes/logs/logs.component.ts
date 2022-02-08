@@ -233,7 +233,7 @@ export class LogsComponent implements OnInit {
     if(this.myFormGroup.value.id_user=="id_user"){
       this.logsChartOptions.plugins.title.text="Graph des activés de tous les utilisateurs"
     }else{
-      this.logsChartOptions.plugins.title.text="Graph des activés d'utilisateur qui a l'id: "+this.myFormGroup.value.id_user
+      this.logsChartOptions.plugins.title.text="Graph des activés de "+this.listUser.find(x=> x.id_user===this.myFormGroup.value.id_user).nom_com
     }
     //getListLog
      let params={id_user:this.myFormGroup.value.id_user, dateDeb:dateDeb, dateFin:dateFin}
